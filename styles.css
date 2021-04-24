@@ -13,4 +13,51 @@
   padding: 0;
   box-sizing: border-box;
   background: var(--active-grad);
+  /* text-align: center; */
+}
+
+/* mobile first*/
+
+/* Primary layout */
+.header {
+  padding: 3.2rem;
+  height: 85px;
+}
+.hero {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 250px;
+}
+.hero .hero__img {
+  width: 100%;
+  max-height: 250px;
+}
+.main {
+ padding: 7rem 3.2rem;
+ text-align: center;
+}
+
+/* newletter section */
+
+.newslttr .newslttr__title span{
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: var(--desat-red);
+  letter-spacing: 15px;
+}
+.newslttr .newslttr__title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: var(--gray-red);
+  letter-spacing: 14px;
+  line-height: 3.5rem;
+}
+
+.newslttr .newslttr__text {
+  color: var(--desat-red);
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+  padding: 0 1.5rem;
+  line-height: 2rem;
 }
