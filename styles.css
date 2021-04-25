@@ -6,7 +6,7 @@
   --active-grad: linear-gradient(50deg, hsl(0deg, 0%, 84%), hsl(0deg, 37%, 92%));
   --grad: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   font-size: 62.5%;
-  font-family: 'Josefin Sans';
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
 }
 * {
@@ -86,7 +86,7 @@
   border: 1px solid var(--desat-red);
   font-size: 1.5rem;
   letter-spacing: 0px;
-  font-family: 'Josefin Sans';
+  font-family: 'Josefin Sans', sans-serif;
   transition: 500ms border ease-in-out;
 }
 .newslttr .newslttr__form .form__email::placeholder {
@@ -130,25 +130,28 @@
 .newslttr .newslttr__form .form__submit .submit--good{
   transform: translate(0.2rem,0.2rem);
 }
-.newslttr .newslttr__form .submit--error{
+.newslttr .newslttr__form .submit--error {
   position: absolute;
   display: inline-block;
   top: 22%;
   right: 7rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+  /* animation: opacity 1s; */
 }
-.newslttr .newslttr__form .error-msg{
+.newslttr .newslttr__form .error--msg {
+  position: absolute;
   padding-left: 2.5rem;
-  text-align: left;
   margin-top: 1rem;
   color: var(--desat-red);
   font-size: 1.2rem;
+  text-align: left;
+  /* animation: opacity 1s; */
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 /* Utilities */
-.none {
-  display: none !important;
-}
-
 @media (min-width: 600px) {
   .header {
     grid-area: header;

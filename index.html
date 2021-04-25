@@ -29,12 +29,12 @@
           Add your email below to stay up-to-date with announcements and our launch deals.
         </p>
         <form action="/" class="newslttr__form">
-          <input type="email" class="form__email" placeholder="Email Address" required>
+          <input type="email" class="form__email" placeholder="Email Address" required autocomplete="email">
           <button type="submit" class="form__submit">
             <img src="./images/icon-arrow.svg" class="submit--good" alt="succesful process">
           </button>
-          <img src="./images/icon-error.svg" class="submit--error none" data-error alt="an errror with your email ocurred">
-          <p class="error-msg none" data-error>
+          <img src="./images/icon-error.svg" class="submit--error" data-error alt="an errror with your email ocurred">
+          <p class="error--msg" data-error>
             Please enter a valid email
           </p>
         </form>
@@ -46,6 +46,8 @@
     const d = document,
       $emailInput = d.querySelector(".form__email"),
       $undisplayedErrorElms = d.querySelectorAll("[data-error]"),
+      $submitError = d.querySelector(".submit--error"),
+      $errorMsg = d.querySelector(".error--msg"),
       pattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i ; //Found email regex https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
       
     $emailInput.addEventListener("keyup", ev => {
@@ -58,16 +60,20 @@
     });
 
     function formWrong() {
-      $undisplayedErrorElms.forEach($el => {
-        $el.classList.remove("none");
-      });
+      // $undisplayedErrorElms.forEach($el => {
+      //   $el.classList.remove("none");
+      // });
       $emailInput.style.paddingRight = '12.5rem';
+      $submitError.style.opacity = 1;
+      $errorMsg.style.opacity = 1;
     };
     function formGood() {
-      $undisplayedErrorElms.forEach($el => {
-        $el.classList.add("none");
-        $emailInput.style.paddingRight = '7.5rem';
-      });
+      // $undisplayedErrorElms.forEach($el => {
+      //   $el.classList.add("none");
+      // });
+      $emailInput.style.paddingRight = '7.5rem';
+      $submitError.style.opacity = 0;
+      $errorMsg.style.opacity = 0;
     };
   </script>
 
