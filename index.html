@@ -61,10 +61,12 @@
       $undisplayedErrorElms.forEach($el => {
         $el.classList.remove("none");
       });
+      $emailInput.style.paddingRight = '12.5rem';
     };
     function formGood() {
       $undisplayedErrorElms.forEach($el => {
         $el.classList.add("none");
+        $emailInput.style.paddingRight = '7.5rem';
       });
     };
   </script>
