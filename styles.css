@@ -150,3 +150,55 @@
 .none {
   display: none !important;
 }
+
+@media (min-width: 600px) {
+  .header {
+    grid-area: header;
+    width: unset;
+    height: unset;
+    padding-left: 10rem;
+    align-self: center;
+  }
+  .main {
+    grid-area: main;
+    width: unset;
+    height: unset;
+    text-align: left;
+    padding-left: 10rem;
+    align-self: center;
+  }
+  .hero {
+    grid-area: hero;
+    width: unset;
+    height: unset;
+  }
+  .hero .hero__img {
+    height: 100%;
+    max-height: unset;
+  }
+  .wrapper {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(7, minmax(0, 1fr)); /*https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid*/
+    grid-template-rows: 20% 80%;
+    grid-template-areas: 
+      "header header header header hero hero hero"
+      "main main main main hero hero hero"; /*https://www.google.com/search?q=define+grid+area&oq=define+grid+area&aqs=chrome..69i57.2909j0j1&sourceid=chrome&ie=UTF-8*/
+  }
+  .newslttr .newslttr__title {
+    padding: unset;
+    margin: unset;
+  }
+  .newslttr .newslttr__title span {
+   letter-spacing: 10px;
+  }
+  .newslttr .newslttr__text {
+    padding: unset;
+    margin: 1.5rem 0;
+  }
+  .newslttr .newslttr__form {
+    padding: unset;
+    margin: unset;
+  }
+}
