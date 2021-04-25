@@ -2,7 +2,8 @@
   --desat-red: hsl(0, 36%, 70%);
   --soft-red: hsl(0, 93%, 68%);
   --gray-red: hsl(0, 6%, 24%);
-  --active-grad: linear-gradient(50deg, hsl(0%, 0%, 84%), hsl(0%, 37%, 92%));
+  /* --active-grad: linear-gradient(50deg, hsl(0%, 0%, 84%), hsl(0%, 37%, 92%)); */
+  --active-grad: linear-gradient(50deg, hsl(0deg, 0%, 84%), hsl(0deg, 37%, 92%));
   --grad: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   font-size: 62.5%;
   font-family: 'Josefin Sans';
@@ -12,8 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: var(--active-grad);
-  /* text-align: center; */
 }
 
 /* mobile first*/
@@ -116,15 +115,14 @@
   filter: drop-shadow(0 0 0.75rem var(--desat-red));
   transition: all 700ms ease;
 }
+
+.newslttr .newslttr__form .form__submit:hover,
 .newslttr .newslttr__form .form__submit:focus {
   outline: none;
-}
-.newslttr .newslttr__form .form__submit:hover {
-  /* background-image: var(--active-grad); */
   transform: translateX(13px);
   width: 100px;
   filter: drop-shadow(0 0 0.75rem var(--desat-red));
-  background-image: linear-gradient(50deg, hsl(0deg 0% 84%), hsl(0deg 37% 92%));
+  background-image: var(--active-grad);
 }
 
 /* Styles for icons inside form, error icon and arrow submit icon, error msg as well*/
