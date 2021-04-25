@@ -30,17 +30,42 @@
       <form action="/" class="newslttr__form">
         <input type="email" class="form__email" placeholder="Email Address" required>
         <button type="submit" class="form__submit">
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path fill="#FFF" stroke="#808080" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg> -->
           <img src="./images/icon-arrow.svg" class="submit--good" alt="succesful process">
         </button>
-        <img src="./images/icon-error.svg" class="submit--error none" alt="an errror with your email ocurred">
-        
-        <p class="error-msg none">
+        <img src="./images/icon-error.svg" class="submit--error none" data-error alt="an errror with your email ocurred">
+        <p class="error-msg none" data-error>
           Please enter a valid email
         </p>
       </form>
     </section>
   </main>
+
+  <script>
+    const d = document,
+      $emailInput = d.querySelector(".form__email"),
+      $undisplayedErrorElms = d.querySelectorAll("[data-error]"),
+      pattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i ; //Found email regex https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+      
+    $emailInput.addEventListener("keyup", ev => {
+      if (!ev.target.value.match(pattern)) {
+        formWrong();
+      };
+      if (ev.target.value.match(pattern)){
+        formGood();
+      };
+    });
+
+    function formWrong() {
+      $undisplayedErrorElms.forEach($el => {
+        $el.classList.remove("none");
+      });
+    };
+    function formGood() {
+      $undisplayedErrorElms.forEach($el => {
+        $el.classList.add("none");
+      });
+    };
+  </script>
   
 </body>
 </html>

@@ -30,17 +30,20 @@
   max-width: 700px;
   height: 250px;
 }
-.hero .hero__img {
-  width: 100%;
-  max-height: 250px;
-}
 .main {
  padding: 7rem 3.2rem;
  text-align: center;
  width: 100vw;
 }
 
+/* herom imgs */
+.hero .hero__img {
+  width: 100%;
+  max-height: 250px;
+}
+
 /* newletter section */
+/* newsletter text part */
 .newslttr .newslttr__title span{
   font-size: 3.5rem;
   font-weight: 200;
@@ -66,12 +69,16 @@
   max-width: 330px;
   margin: 1.5rem auto;
 }
+
+/* newsletter form */
 .newslttr .newslttr__form {
   position: relative;
   max-width: 315px;
   max-height: 65px;
   margin: 0 auto;
 }
+
+/* email input */
 .newslttr .newslttr__form .form__email{
   width: 100%;
   height: 48px;
@@ -83,10 +90,17 @@
   font-family: 'Josefin Sans';
   transition: 500ms border ease-in-out;
 }
+.newslttr .newslttr__form .form__email::placeholder {
+  font-family: "Josefin Sans";
+  color: var(--desat-red);
+  opacity: 0.5;
+}
 .newslttr .newslttr__form .form__email:focus {
   border: 2px solid var(--desat-red);
   outline: none;
 }
+
+/* submit button */
 .newslttr .newslttr__form .form__submit{
   position: absolute;
   right: -4px;
@@ -102,6 +116,19 @@
   filter: drop-shadow(0 0 0.75rem var(--desat-red));
   transition: all 700ms ease;
 }
+.newslttr .newslttr__form .form__submit:focus {
+  outline: none;
+}
+.newslttr .newslttr__form .form__submit:hover {
+  /* background-image: var(--active-grad); */
+  transform: translateX(13px);
+  width: 100px;
+  filter: drop-shadow(0 0 0.75rem var(--desat-red));
+  background-image: linear-gradient(50deg, hsl(0deg 0% 84%), hsl(0deg 37% 92%));
+}
+
+/* Styles for icons inside form, error icon and arrow submit icon, error msg as well*/
+/* Just to tweak the icon inside submit button*/
 .newslttr .newslttr__form .form__submit .submit--good{
   transform: translate(0.2rem,0.2rem);
 }
@@ -111,15 +138,6 @@
   top: 22%;
   right: 7rem;
 }
-.newslttr .newslttr__form .form__submit:focus {
-  outline: none;
-}
-.newslttr .newslttr__form .form__submit:hover {
-  /* background-image: var(--active-grad); */
-  transform: translateX(13px);
-  width: 100px;
-  background-image: linear-gradient(50deg, hsl(0deg 0% 84%), hsl(0deg 37% 92%));
-}
 .newslttr .newslttr__form .error-msg{
   padding-left: 2.5rem;
   text-align: left;
@@ -127,13 +145,8 @@
   color: var(--desat-red);
   font-size: 1.2rem;
 }
-/* Utilities */
-.newslttr .newslttr__form .form__email::placeholder {
-  font-family: "Josefin Sans";
-  color: var(--desat-red);
-  opacity: 0.5;
-}
 
+/* Utilities */
 .none {
   display: none !important;
 }
